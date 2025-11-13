@@ -68,4 +68,36 @@ public class KMP {
         }
         return lps; // return our longest prefix suffix array
     }
+
+
+    // doing the same thing like a search method but preparing array for output
+    public int[] searchToArray() {
+        int n = text.length();
+        int m = pattern.length();
+        int[] lps = computeLPS(pattern);
+
+        java.util.List<Integer> result = new java.util.ArrayList<>();
+        int i = 0, j = 0;
+
+        while (i < n) {
+            if (pattern.charAt(j) == text.charAt(i)) {
+                i++;
+                j++;
+            }
+
+            if (j == m) {
+                result.add(i - j);
+                j = lps[j - 1];
+            } else if (i < n && pattern.charAt(j) != text.charAt(i)) {
+                if (j != 0) {
+                    j = lps[j - 1];
+                } else {
+                    i++;
+                }
+            }
+        }
+
+        return result.stream().mapToInt(Integer::intValue).toArray();
+    }
+
 }
