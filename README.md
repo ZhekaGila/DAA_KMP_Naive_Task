@@ -11,7 +11,7 @@ In this project, I implemented the **Knuth–Morris–Pratt (KMP)** string searc
 
 - IDE (like IntelliJ IDEA, Eclipse) or terminal with javac / java
 
-  - Needed input files in `docs/input` text.txt and pattern.txt 
+- Needed input files in `docs/input` text.txt and pattern.txt 
 
 ---
 
@@ -66,12 +66,12 @@ I tested the algorithm on texts of different lengths:
 
 ## Example Output
 
-Text: ABABDABACDABABCABAB
-Pattern: ABABCABAB
-Results:
-Pattern on index: 10
-Algorithm: KMP
-Execution Time: 1.53940 ms
+Text: ABABDABACDABABCABAB <br>
+Pattern: ABABCABAB<br>
+Results:<br>
+Pattern on index: 10<br>
+Algorithm: KMP<br>
+Execution Time: 1.53940 ms<br>
 
 
 ---
