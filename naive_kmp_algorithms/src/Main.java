@@ -3,17 +3,24 @@ import algorithms.Naive;
 
 public class Main {
     public static void main(String[] args) {
-        String text = "ABABABA";
-        String pattern = "ABA";
 
-        KMP strings = new KMP(text, pattern);
+        // Short string
+        System.out.println("Short test: ");
+        KMP kmp1 = new KMP("nano banana", "ana");
+        kmp1.search();
 
-        int[] lps = strings.computeLPS(pattern);
 
-        for (int i = 0; i < pattern.length(); i++) {
-            System.out.print(pattern.charAt(i) + " " + lps[i]);
-            System.out.println();
-        }
-        strings.search();
+        // Medium string
+        System.out.println("\nMedium test: ");
+        KMP kmp2 = new KMP("abababababab", "ababa");
+        kmp2.search();
+
+
+        // Long string
+        System.out.println("\nLong test: ");
+        String longText = "a".repeat(100000) + "b";
+        String longPattern = "a".repeat(500) + "b";
+        KMP kmp3 = new KMP(longText, longPattern);
+        kmp3.search();
     }
 }
